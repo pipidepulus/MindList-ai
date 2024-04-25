@@ -31,7 +31,7 @@ interface ConfigurationProviderProps {
 
 export const ConfigurationProvider = ({ children }: ConfigurationProviderProps) => {
 	const [token, setToken] = useState<string>('');
-	const [model, setModel] = useState<AvailableModel>('text-davinci-003');
+	const [model, setModel] = useState<AvailableModel>('gpt-3.5-turbo');
 	const [mode, setMode] = useState<AvailableModes | undefined>();
 
 	useEffect(() => {
@@ -40,7 +40,7 @@ export const ConfigurationProvider = ({ children }: ConfigurationProviderProps) 
 
 		const defaultModel = getLocalConfigKey('model') ?? process.env.NEXT_PUBLIC_OPENAI_COMPLETION_MODEL!;
 
-		const model = isAvailableModel(defaultModel) ? defaultModel : 'text-davinci-003';
+		const model = isAvailableModel(defaultModel) ? defaultModel : 'gpt-3.5-turbo';
 
 		setModel(model);
 
