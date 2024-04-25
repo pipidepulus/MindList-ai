@@ -20,7 +20,7 @@ const ConfigurationContext = createContext<ConfigurationContextValue>({
 	token: '',
 	mode: undefined,
 
-	model: 'text-davinci-003',
+	model: 'gpt-3.5-turbo',
 	updateModel: () => {},
 	updateMode: () => {},
 });
